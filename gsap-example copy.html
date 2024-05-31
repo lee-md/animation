@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-based Scaling with GSAP</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="hero">
+        <div class="hero-wrapper" style="height: 100vh;">
+            <div class="hero-video" style="height: 100vh;"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let myv = 0.7;
+
+        function updateScale() {
+            const sh = $("#hero").outerHeight();
+            const wh = $(window).height();
+            const gtv = 200 / (sh - wh);
+            myv = parseFloat(myv) + parseFloat(gtv * ($(window).scrollTop() / 100));
+            gsap.to(".hero-video", {
+                duration: 0,
+                scale: myv
+            });
+            if ($(window).scrollTop() > (sh - wh)) {
+                $("body").addClass("scroll-down");
+            } else {
+                $("body").removeClass("scroll-down");
+            }
+        }
+
+        gsap.to(".hero-video", {
+            scrollTrigger: {
+                trigger: ".hero-wrapper",
+                scrub: true,
+                start: "top center",
+                end: "bottom center"
+            },
+            scale: 1,
+            onUpdate: updateScale
+        });
+
+        $(window).on("load scroll resize", updateScale);
+    </script>
+</body>
+</html>

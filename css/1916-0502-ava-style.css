@@ -1,0 +1,317 @@
+/* 
+Theme Name: Avasoft 2024
+Theme URI: https://github.com/elementor/hello-theme-child/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 2.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+
+
+.overflow-hidden {
+	overflow: hidden
+}
+
+/*hero animation styles starts*/
+body {
+	overflow-x: hidden !important
+}
+
+body:not(.page-id-34) .main-header.header-scroll-effect {
+	box-shadow: 6px 1px 4px #999;
+}
+
+body.page-id-34 .main-header {
+	background-color: transparent !important
+}
+
+body.page-id-34 {
+	background-color: #FBF9FF
+}
+
+.animation-container,
+.hero-wrapper {
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0 !important
+}
+
+.hero-video-container {
+	padding: 200px;
+	width: 100%;
+	height: 100%;
+	aspect-ratio: auto;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1
+}
+
+.hero-video-container video {
+	pointer-events: none;
+	width: 100%;
+	object-fit: cover;
+	z-index: -100;
+	background-position: 50%;
+	background-size: cover;
+	margin: auto;
+	position: absolute;
+	top: -100%;
+	bottom: -100%;
+	left: -100%;
+	right: -100%;
+}
+
+.hero-title {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 96%;
+	max-width: 1140px !important;
+	margin: 0 auto;
+	z-index: 1
+}
+
+/*hero animation styles ends*/
+/*sidebar styles starts*/
+
+.sidebar {
+	position: fixed;
+	right: 0;
+	top: 10%;
+	width: 200px;
+	z-index: 9999;
+	display: none;
+	padding: 10px;
+	background-color: #FBF9FF
+}
+
+.sidebar.elementor-widget-table-of-contents .elementor-widget-container {
+	border: none;
+}
+
+.sidebar .elementor-toc__header {
+	padding: 0
+}
+
+.sidebar .elementor-toc__header .elementor-toc__header-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	line-height: 40px !important;
+	border-bottom: 1px solid #ACACAC
+}
+
+.sidebar .elementor-toc__body {
+	padding: 0 0 0 20px
+}
+
+.sidebar .elementor-toc__body .elementor-toc__list-item {
+	margin-bottom: 0;
+	font-size: 14px;
+	color: #010101;
+}
+
+.sidebar .elementor-toc__body .elementor-toc__list-item .elementor-toc__list-item-text {
+	padding: 10px 0;
+	border-bottom: 1px solid #DFDFDF;
+	width: 100%;
+}
+
+.sidebar .elementor-toc__body .elementor-toc__list-item .elementor-toc__list-item-text.elementor-item-active {
+	font-weight: bold;
+	color: #000
+}
+
+body:not(.elementor-editor-active) .invisible-heading {
+	visibility: hidden
+}
+
+/*sidebar styles ends*/
+
+.voilet-dot {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: #CDB9EF;
+	display: inline-block;
+	margin: 0 15px 0 0;
+}
+
+.on-hover-display-content .elementor-icon-box-content .elementor-icon-box-title a {
+	position: relative;
+}
+
+.on-hover-display-content .elementor-icon-box-content .elementor-icon-box-title a:after {
+	content: "";
+	background: url(/wp-content/uploads/2024/04/link-hover-arrow.svg);
+	height: 30px;
+	width: 30px;
+	background-size: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 0 0 5px;
+	transition: all ease-in-out .5s;
+	display: inline-block;
+}
+
+.on-hover-display-content .elementor-icon-box-content .elementor-icon-box-title a:before {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	border-bottom: 2px solid #212211;
+	transition: all .5s ease;
+}
+
+.on-hover-display-content.active .elementor-icon-box-content .elementor-icon-box-title a:hover:before {
+	right: 0;
+	width: 100%;
+	transition: all .5s ease;
+	bottom: -5px;
+}
+
+.cta-with-bg h3 {
+	line-height: normal
+}
+
+@media (min-width: 1025px) {
+
+	.on-hover-display-content .elementor-icon-box-content .elementor-icon-box-title a:after {
+		margin: 0 0 0 30px;
+		height: 36px;
+		width: 36px;
+		background-size: 36px;
+		display: none
+	}
+
+	.on-hover-display-content.active .elementor-icon-box-content:hover .elementor-icon-box-title a:after {
+		transition: all ease-in-out .5s;
+		display: inline-block;
+	}
+
+	.on-hover-display-content.active:first-child .elementor-icon-box-content .elementor-icon-box-title a:after {
+		display: inline-block;
+	}
+
+	.on-hover-display-content.active:first-child .elementor-icon-box-content .elementor-icon-box-title a:before {
+		width: 100%;
+	}
+
+	.decor-left,
+	.decor-right,
+	.line-decor {
+		position: relative
+	}
+
+	.decor-left:after,
+	.decor-right:before {
+		content: '';
+		background-image: url(/wp-content/uploads/2024/05/decor-left.svg);
+		background-repeat: no-repeat;
+		height: 67px;
+		width: 40px;
+		background-size: 100% 100%;
+		position: absolute;
+		top: 39%;
+		transform: translatey(-50%);
+		right: -39px;
+	}
+
+	.decor-right:before {
+		background-image: url(/wp-content/uploads/2024/05/decor-right.svg);
+		right: unset;
+		left: -37px;
+	}
+
+	.line-decor:after {
+		content: '';
+		background-image: url(/wp-content/uploads/2024/05/line-decor.svg);
+		background-repeat: no-repeat;
+		height: 500px;
+		width: 28px;
+		background-size: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translatex(-50%);
+	}
+
+	.cta-with-bg h3 {
+		line-height: 75px !important
+	}
+
+	.cta-with-bg .word-break {
+		display: inline-block
+	}
+
+}
+
+@media (max-width: 1366px) {
+
+	.decor-left:after,
+	.decor-right:before {
+		width: 35px;
+		right: -35px;
+	}
+
+	.decor-right:before {
+		width: 32px;
+		left: -31px;
+		top: 38%;
+	}
+
+}
+
+@media (max-width: 1270px) {
+
+	.line-decor:after {
+		height: 510px;
+	}
+
+	.decor-left:after,
+	.decor-right:before {
+		width: 32px;
+		right: -32px;
+	}
+
+	.decor-right:before {
+		width: 29px;
+		left: -29px;
+		top: 36%;
+	}
+
+}
+
+@media (max-width: 1080px) {
+
+	.line-decor:after {
+		height: 540px;
+	}
+
+	.decor-left:after,
+	.decor-right:before {
+		width: 27px;
+		right: -27px;
+	}
+
+	.decor-right:before {
+		width: 25px;
+		left: -24px;
+		top: 36%;
+	}
+
+}

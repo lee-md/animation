@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin spacer</title>
+
+    <style>
+        .title-sm {
+            opacity: 0.4;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .manifesto-hold {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto {
+            /*min-height: 100vh;*/
+            margin: 70px 0;
+            display: flex;
+            align-items: center;
+
+            height: 100vh;
+            /* Fallback for browsers that do not support Custom Properties */
+            height: calc(var(--vh, 1vh) * 100);
+
+            /*background-color: #DBDBDB;*/
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            top: 0 !important;
+            /*transition: background-color 0.8s;*/
+        }
+
+
+        body {
+            transition: background-color 0.7s;
+        }
+
+        body.minifesto-scrolled {
+            background-color: #000;
+        }
+
+
+        .manifesto .section-counter {
+            color: #fff;
+        }
+
+        .manifesto .title-sm {
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .manifesto-text {
+            color: #fff;
+            font-size: 8vw;
+            white-space: nowrap;
+            font-family: 'PxGroteskRegular';
+            line-height: 1;
+        }
+
+        .manifesto-content {
+            padding-left: 8%;
+        }
+
+
+        body {
+            overflow-x: hidden;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            .manifesto {
+                margin-bottom: 120px;
+            }
+        }
+
+
+        @media only screen and (max-width: 1023px) {
+            .manifesto {
+                margin-bottom: 90px;
+            }
+
+
+            .manifesto-text {
+                font-size: 11vw;
+            }
+        }
+
+
+        .header-equal {
+            height: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-equal"></div>
+    <div class="manifesto-hold black-manifesto">
+        <div class="manifesto h-scroll-container" id='ani-container'>
+            <!-- <div class="section-counter">
+                03 / 06
+            </div> -->
+            <div class="manifesto-content">
+                <div class="p-0 title-sm">
+                    Our manifesto </div>
+                <div class="p-0 manifesto-text">
+                    Making design valuable beyond the aesthetics. </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://andstudio.lt/wp-content/themes/andstudio/js/vendor/jquery.min.js"></script>
+    <!-- <script src="https://andstudio.lt/wp-content/themes/andstudio/js/foundation.min.js"></script> -->
+    <!-- <script src="https://andstudio.lt/wp-content/themes/andstudio/js/owl.carousel.min.js"></script> -->
+    <!-- <script src="https://andstudio.lt/wp-content/themes/andstudio/js/jquery.cookie.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+    <script>
+        // $(document).foundation();
+
+        $(document).ready(function () {
+
+            $window = $(window);
+
+            if ($(".manifesto-text").length > 0) {
+
+                var manifestoW = $(".manifesto-text").outerWidth();
+                var manifestoNeeded = manifestoW + (manifestoW / 5);
+                $(".manifesto").css('width', manifestoNeeded);
+
+                $(window).on('resize', function () {
+                    manifestoW = $(".manifesto-text").outerWidth();
+                    manifestoNeeded = manifestoW + (manifestoW / 5);
+                    $(".manifesto").css('width', manifestoNeeded);
+                });
+
+                var controller = new ScrollMagic.Controller();
+                var tl = new TimelineMax();
+                var elementWidth = document.getElementById('ani-container').offsetWidth;
+                var width = window.innerWidth - elementWidth;
+                var duration = elementWidth / window.innerHeight * 100;
+                var official = duration + '%';
+                tl
+                    .to('.h-scroll-container', 5, { x: width, ease: Power0.easeNone });
+
+                var scene1 = new ScrollMagic.Scene({
+                    triggerElement: '.h-scroll-container',
+                    triggerHook: 0,
+                    duration: official
+                })
+                    .setPin('.h-scroll-container')
+                    .setTween(tl)
+                    .addTo(controller);
+
+                // console.log(elementWidth);
+
+            }
+
+            var $window = $(window);
+            $window.scroll(function () {
+                scrollTop = $(window).scrollTop();
+
+                windowH = $(window).height()
+                // headerH = $('.header-equal').outerHeight();
+                manifestoW = $('.manifesto').outerWidth();
+
+                totalToManifesto = (windowH / 3)
+                totalManifesto = manifestoW - (windowH / 1.5)
+
+                $scroll = window.pageYOffset;
+
+
+                if ($scroll > totalToManifesto) {
+                    $('.manifesto').stop().addClass('scrolled');
+                    $('body').stop().addClass('minifesto-scrolled');
+                }
+                if ($scroll < totalToManifesto) {
+                    $('.manifesto').stop().removeClass('scrolled');
+                    $('body').stop().removeClass('minifesto-scrolled');
+                }
+                if ($scroll > totalManifesto) {
+                    $('.manifesto').stop().removeClass('scrolled');
+                    $('body').stop().removeClass('minifesto-scrolled');
+                }
+
+            });
+
+            $window.trigger('scroll');
+
+        });
+    </script>
+</body>
+
+</html>

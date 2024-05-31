@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section class="scroll-animation">
+        <div class="wrapper">
+            <video src="img/seiren-bg-video.mp4"></video>
+        </div>
+    </section>
+    <section class="empty-container red"></section>
+    <section class="empty-container blue"></section>
+    
+    <section class="empty-container blue"></section>
+    <section class="empty-container red"></section>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="js/gsap-latest-beta.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".scroll-animation",
+                scrub: true,
+                pin: true,
+
+                start: "50% 50%",
+                end: "+=200%"
+            }
+        })
+
+            .from(".wrapper", {
+                scale: 0.5,
+                ease: "none"
+            })
+    </script> -->
+</body>
+
+</html>

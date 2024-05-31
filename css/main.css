@@ -1,0 +1,402 @@
+.empty-container {
+    height: 100vh;
+}
+
+.parent-cont {
+    position: relative;
+    width: 1400px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.content-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+    padding-bottom: 12rem;
+    transform: translateX(-50%);
+    z-index: 9
+}
+
+@media (min-width: 540px) {
+    .content-wrapper {
+        padding-bottom: 8rem
+    }
+}
+
+@media (min-width: 720px) {
+    .content-wrapper {
+        padding-bottom: 14rem
+    }
+}
+
+.content-grid {
+    pointer-events: none;
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2.5rem
+}
+
+@media (min-width: 720px) {
+    .content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+.content-grid-post {
+    will-change: transform;
+    overflow: hidden;
+    border-radius: 1.5rem
+}
+
+.content-grid-post:nth-child(odd) {
+    transform: skewX(-10deg) rotate(-25deg) translateX(-20%);
+    transition: all ease-in-out .5s;
+}
+
+/* .content-grid-post:nth-child(3) {
+    transform: skewX(-10deg) rotate(-25deg) translateX(-30%);
+    transition: all ease-in-out .5s;
+}
+
+.content-grid-post:nth-child(5) {
+    transform: skewX(-10deg) rotate(-25deg) translateX(0);
+    transition: all ease-in-out .5s;
+} */
+
+.content-grid-post:nth-child(even) {
+    transform: skewX(10deg) rotate(25deg) translateX(25%);
+    transition: all ease-in-out .5s;
+}
+
+@media (min-width: 280px) and (max-width:767px) {
+
+    .content-grid-post:nth-child(2),
+    .content-grid-post:nth-child(5) {
+        display: none
+    }
+
+    .content-grid-post:nth-child(3) {
+        position: relative;
+        left: -50%
+    }
+
+    .content-grid-post:nth-child(4) {
+        position: relative;
+        right: -50%
+    }
+}
+
+.content-grid-post img {
+    width: 100%
+}
+
+.scroll-animation {
+    height: 100vh;
+}
+
+.wrapper {
+    height: 100vh
+}
+
+.wrapper,
+.hero-video {
+    background-image: url(../img/circle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.red {
+    background-color: #c82736;
+    background-image: radial-gradient(circle at 19% 90%, rgba(190, 190, 190, 0.04) 0%, rgba(190, 190, 190, 0.04) 17%, transparent 17%, transparent 100%), radial-gradient(circle at 73% 2%, rgba(78, 78, 78, 0.04) 0%, rgba(78, 78, 78, 0.04) 94%, transparent 94%, transparent 100%), radial-gradient(circle at 45% 2%, rgba(18, 18, 18, 0.04) 0%, rgba(18, 18, 18, 0.04) 55%, transparent 55%, transparent 100%), radial-gradient(circle at 76% 60%, rgba(110, 110, 110, 0.04) 0%, rgba(110, 110, 110, 0.04) 34%, transparent 34%, transparent 100%), radial-gradient(circle at 68% 56%, rgba(246, 246, 246, 0.04) 0%, rgba(246, 246, 246, 0.04) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 71% 42%, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 47%, transparent 47%, transparent 100%), radial-gradient(circle at 46% 82%, rgba(247, 247, 247, 0.04) 0%, rgba(247, 247, 247, 0.04) 39%, transparent 39%, transparent 100%), radial-gradient(circle at 50% 47%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 45%, transparent 45%, transparent 100%), linear-gradient(90deg, #e53949, #cc2232);
+}
+
+.blue {
+    background-color: #2c7ad2;
+    background-image: radial-gradient(circle at 47% 14%, rgba(205, 205, 205, 0.04) 0%, rgba(205, 205, 205, 0.04) 43%, transparent 43%, transparent 100%), radial-gradient(circle at 35% 12%, rgba(215, 215, 215, 0.04) 0%, rgba(215, 215, 215, 0.04) 4%, transparent 4%, transparent 100%), radial-gradient(circle at 1% 35%, rgba(24, 24, 24, 0.04) 0%, rgba(24, 24, 24, 0.04) 37%, transparent 37%, transparent 100%), radial-gradient(circle at 21% 1%, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.04) 26%, transparent 26%, transparent 100%), radial-gradient(circle at 23% 82%, rgba(249, 249, 249, 0.04) 0%, rgba(249, 249, 249, 0.04) 60%, transparent 60%, transparent 100%), radial-gradient(circle at 11% 54%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 23%, transparent 23%, transparent 100%), radial-gradient(circle at 69% 68%, rgba(234, 234, 234, 0.04) 0%, rgba(234, 234, 234, 0.04) 10%, transparent 10%, transparent 100%), linear-gradient(90deg, #2c7ad2, #1568c6);
+}
+
+
+
+/* 
+Theme Name: Avasoft 2024
+Theme URI: https://github.com/elementor/hello-theme-child/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 2.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+
+/*submit-button styles - Starts here*/
+.form-body input.submit-button {
+    cursor: pointer;
+    margin: 15px 0 0;
+    border: 0;
+    color: #fff;
+
+    &:hover {
+        color: #000
+    }
+}
+
+.form-body .form-button {
+    display: inline-block;
+    margin: 0 20px 0 auto;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*submit-button styles - Ends here*/
+
+/*Blogs & casestudies form style - starts here*/
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    border: 0;
+
+    &:hover {
+        background: none;
+        color: #000
+    }
+}
+
+.single-post .insights-body-contents img.blog-img {
+    margin: 0
+}
+
+.blog-bg-alert {
+    background-color: #fff4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.blog-casestudy-form .b-c-form-header {
+    padding: 15px 9px 15px 15px;
+    display: flex;
+}
+
+.blog-casestudy-form .b-c-form-header h4.b-c-form-title {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    line-height: 32px;
+    margin: 0px;
+}
+
+.blog-casestudy-form .b-c-form-header .close {
+    float: right;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    color: #9b9898;
+    background-color: transparent;
+    border: none;
+    margin-top: 4px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.blog-casestudy-form .form-body .form-email-field,
+.migration-form .form-body .form-input-field,
+.migration-form .form-body select#migration-product {
+    width: 93%;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-casestudy-form input.form-email-field:focus,
+.migration-form .form-body .form-input-field:focus,
+.migration-form .form-body select#migration-product:focus {
+    color: #495057;
+    background-color: #fff;
+    border-bottom: 2px solid #4883ef !important;
+    outline: 0;
+}
+
+/*Blogs & casestudies form style - Ends here*/
+
+
+.single-post .blog-bg-box.sample ul {
+    list-style: disc;
+}
+
+.single-post ol li.order-list.order-list-color::marker {
+    color: #3161d1;
+}
+
+.gray-v1 {
+    color: #9BA2AD;
+
+}
+
+.gradient-green {
+    background: linear-gradient(90deg, #3561B6 0%, #70EF8C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.star-icon {
+
+    background-image: url(/wp-content/uploads/2024/05/Star-4.svg);
+    display: block;
+    width: 30px;
+    height: 21px;
+    background-size: 21px;
+    background-repeat: no-repeat;
+    margin-left: 11px;
+}
+
+.text-icon .elementor-widget-container {
+    display: flex;
+    align-items: center;
+}
+
+.tertiary-button .elementor-button {
+    background: var(--transparent);
+    color: #4c7ddb;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-weight: 600;
+    box-shadow: 0 0 0 1px #4c7ddb inset;
+
+}
+
+.button-outline-v1 .elementor-widget-container {
+    color: #4c7ddb;
+
+    border-radius: 50px;
+    padding: 12px 34px;
+    font-weight: 600;
+    box-shadow: 0 0 0 1px #4c7ddb inset;
+
+}
+
+.button-outline-v2 .elementor-widget-container {
+    color: #E06969;
+
+    border-radius: 50px;
+    padding: 12px 34px;
+    font-weight: 600;
+    box-shadow: 0 0 0 1px #E06969 inset;
+
+}
+
+/* Banner scroll animation */
+.title-sm {
+    opacity: 0.4;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.manifesto-hold {
+    position: relative;
+    overflow: hidden;
+}
+
+.manifesto {
+    /*min-height: 100vh;*/
+    margin: 70px 0;
+    display: flex;
+    align-items: center;
+
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+
+    /*background-color: #DBDBDB;*/
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    top: 0 !important;
+    /*transition: background-color 0.8s;*/
+}
+
+
+body {
+    transition: background-color 0.7s;
+}
+
+body.minifesto-scrolled {
+    background-color: #000;
+}
+
+
+.manifesto .section-counter {
+    color: #fff;
+}
+
+.manifesto .title-sm {
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.manifesto-text {
+    color: #fff;
+    font-size: 8vw;
+    white-space: nowrap;
+    font-family: 'PxGroteskRegular';
+    line-height: 1;
+}
+
+.manifesto-content {
+    padding-left: 8%;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1280px) {
+    .manifesto {
+        margin-bottom: 120px;
+    }
+}
+
+
+@media only screen and (max-width: 1023px) {
+    .manifesto {
+        margin-bottom: 90px;
+    }
+
+
+    .manifesto-text {
+        font-size: 11vw;
+    }
+}
+
+
+.header-equal {
+    height: 0;
+}
